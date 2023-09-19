@@ -18,6 +18,7 @@ export const getChats = () =>
             lastMessage: "asdasd",
             nickname: "Peter",
           },
+
           {
             id: "aseqwgg",
             avatar: "..",
