@@ -25,6 +25,6 @@ export const getChats = () =>
             nickname: "Ben",
           },
         ]),
-      300,
-    ),
+      300
+    )
   );
