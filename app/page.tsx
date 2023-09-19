@@ -1,5 +1,7 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Image from "next/image";
+import styles from "./page.module.css";
+import { Typography } from "@mui/material";
+import palette from "@/shared/config/mui-config/palette";
 
 export default function Home() {
   return (
@@ -15,7 +17,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -90,6 +92,8 @@ export default function Home() {
           </p>
         </a>
       </div>
+
+      <Typography color={palette.secondary.main}>HI MUI in NEXT 13</Typography>
     </main>
-  )
+  );
 }
