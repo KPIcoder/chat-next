@@ -1,31 +1,12 @@
-import { ChatItem } from "../types/chat.types";
+import { chatItemsMock, chatMock } from "@/__test__/mocks/chat";
+import { Chat, ChatItem } from "../types/chat.types";
 
 export const getChats = () =>
   new Promise<ChatItem[]>((resolve) =>
-    setTimeout(
-      () =>
-        resolve([
-          {
-            id: "asefsgg",
-            avatar: "..",
-            lastMessage: "qwerty",
-            nickname: "Bob",
-          },
+    setTimeout(() => resolve(chatItemsMock), 300)
+  );
 
-          {
-            id: "asetygg",
-            avatar: "..",
-            lastMessage: "asdasd",
-            nickname: "Peter",
-          },
-
-          {
-            id: "aseqwgg",
-            avatar: "..",
-            lastMessage: "ljlkh",
-            nickname: "Ben",
-          },
-        ]),
-      300
-    )
+export const getChatById = (id: string) =>
+  new Promise<Chat>((resolve) =>
+    setTimeout(() => resolve(chatMock.find((chat) => chat.id === id)!), 300)
   );

@@ -1,11 +1,17 @@
-import ChatWindow from "@/modules/chat/components/ChatWindow";
 import React from "react";
+// mui
+import { Container } from "@mui/material";
+// service
+import { getChatById } from "@/modules/chat/services/chat.service";
+// components
+import ChatWindow from "@/modules/chat/components/ChatWindow";
 
-export default function PageChat({ params }: { params: { id: string } }) {
+export default async function PageChat({ params }: { params: { id: string } }) {
+  const chat = await getChatById(params.id);
+
   return (
-    <>
-      <h2>Chat with id: {params.id}</h2>
-      <ChatWindow />;
-    </>
+    <Container>
+      <ChatWindow chat={chat} />
+    </Container>
   );
 }
