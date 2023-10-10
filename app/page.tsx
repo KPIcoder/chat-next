@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { Typography } from "@mui/material";
 import palette from "@/shared/config/mui-config/palette";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -94,6 +95,7 @@ export default function Home() {
       </div>
 
       <Typography color={palette.secondary.main}>HI MUI in NEXT 13</Typography>
+      <Link href={"/chat/c#1"}>Chats</Link>
     </main>
   );
 }

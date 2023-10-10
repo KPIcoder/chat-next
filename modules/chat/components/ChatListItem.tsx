@@ -1,7 +1,7 @@
-"use client";
+import Image from "next/image";
+import Link from "next/link";
 
-import { Avatar, Box, Typography } from "@mui/material";
-import { useRouter } from "next/navigation";
+import { Box, Typography } from "@mui/material";
 
 type Props = {
   id: string;
@@ -11,14 +11,15 @@ type Props = {
 };
 
 export function ChatListItem({ id, nickname, avatar, lastMessage }: Props) {
-  const handleClick = () => router.push("/chat/" + id);
-  const router = useRouter();
+  const link = "/chat/" + encodeURIComponent(id);
 
   return (
-    <Box onClick={handleClick}>
-      <Typography>{nickname}</Typography>
-      <Avatar src={avatar} alt="User avatar" />
-      <Typography>{lastMessage}</Typography>
-    </Box>
+    <Link href={link}>
+      <Box>
+        <Typography variant="h6">{nickname}</Typography>
+        <Image width={50} height={50} src={avatar} alt="User avatar" />
+        <Typography>{lastMessage}</Typography>
+      </Box>
+    </Link>
   );
 }

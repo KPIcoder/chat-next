@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 
 import { ChatItem } from "../types/chat.types";
 import { ChatListItem } from "./ChatListItem";
@@ -14,17 +14,15 @@ export default function ChatList({ chats }: Props) {
         borderRight: "1px solid black",
       }}
     >
-      <Stack spacing={3}>
-        {chats.map((chat) => (
-          <ChatListItem
-            key={chat.id}
-            id={chat.id}
-            avatar={chat.avatar}
-            nickname={chat.nickname}
-            lastMessage={chat.lastMessage}
-          />
-        ))}
-      </Stack>
+      {chats.map((chat) => (
+        <ChatListItem
+          key={chat.id}
+          id={chat.id}
+          avatar={chat.avatar}
+          nickname={chat.nickname}
+          lastMessage={chat.lastMessage}
+        />
+      ))}
     </Box>
   );
 }

@@ -15,7 +15,7 @@ export type Message = {
   id: string;
   type: "image" | "file" | "text";
   body: string;
-  date: Date | string;
+  date: Date | string | number;
   sentByUserId: string;
 };
 
